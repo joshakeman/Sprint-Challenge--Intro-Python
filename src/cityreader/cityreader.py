@@ -38,7 +38,9 @@ def cityreader(cities=[]):
     next(csv_reader, None)
     for row in csv_reader:
         # print(f'{row[0]}, {row[3]}, {row[4]}')
-        cities.append(f'City("{row[0]}", {row[3]}, {row[4]})')
+
+        cities.append(City(row[0], float(row[3]), float(row[4])))
+        # cities.append(f'City("{row[0]}"', float(row[3]), {row[4]})')
         line_count += 1
     # print(f'Processed {line_count} lines.')
     # print(f'{cities.values()}.')
